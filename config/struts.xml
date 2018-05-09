@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+	<struts>
+	<!-- 开发模式 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="ssh" namespace="/" extends="struts-default">
+	    <action name="userAction_*" class="userAction" method="{1}"> 
+	        <result name="add">/success.jsp</result>
+	        <result name="login">/homepage.jsp</result>
+	        <result name="regist">/regist.jsp</result>
+	        <result name="deposit">/success.jsp</result>
+	        <result name="zhuanzhang">/success.jsp</result>
+	        <result name="qukuan">/success.jsp</result>
+	        <result name="adm_g">/success.jsp</result>
+	        <result name="adm_x">/success.jsp</result>
+	         <result name="adm_z">/success.jsp</result>
+	         <result name="error">/loginf.jsp</result>
+	         <result name="messages">/submit.jsp</result>
+	         <result name="msgpane">/MsgPane</result>
+	        </action>
+	    
+	    
+	</package>
+	
+	</struts>
