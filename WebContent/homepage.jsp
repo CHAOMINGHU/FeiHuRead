@@ -11,7 +11,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <title>Insert title here</title>
-
+<link href="css/homepage.css" rel="stylesheet" type="text/css">
 <link type="text/css" rel="stylesheet" href="css/homepage.css" />
 <link type="text/css" rel="stylesheet" href="css/menu.css" />
 <link type="text/css" rel="stylesheet" href="css/contact.css" />
@@ -183,6 +183,14 @@ a:hover {
 
 
 
+.user_name {
+	width: 100px;
+	height: 80px;
+	color:#ffffff;
+    padding-left:50px;
+	margin: 3px 0 0 6px;
+	text-align: center;
+}
 
 
 
@@ -286,8 +294,8 @@ a:hover {
 		</tr>
 		
 	  </table>
-	  <div class="menu_now" >
-		 <p>当前用户：<%=session.getAttribute("existUser4")%></p>
+	  <div class="user_name" >
+		 <p><%=session.getAttribute("existUser1")%></p>
 		</div>
 	</td>
 	<td>
@@ -302,7 +310,7 @@ a:hover {
 			<li><a href="bulletin.jsp">公告</a>
 			</li>
 			<li class="active"><a href="www.baidu.com">管理中心</a></li>
-			<li><a href="submit.jsp">查看留言</a></li>
+			<li><a href="liuyan.jsp">查看留言</a></li>
 			<li><a href="login.jsp">退出</a></li>
 		</ul>
 	</div>
@@ -313,22 +321,7 @@ a:hover {
 	</td>
       </tr>
     </table>
-   <table  border="0" cellspacing="0" cellpadding="0" style="background-color:	#4682B4;">
-  <tr>
-    <td >
-    <div class="con4">
-		
-	</div>
-		
-	</td>
-	
-	
-		
-
-	</td>
-  </tr>
-</table>    
-
+   
 
 	<div class="treebox">
 		<ul class="menuq">
@@ -356,8 +349,6 @@ a:hover {
 			<li class="level1">
 				<a href="#none"><em class="ico ico3"></em>超级管理<i></i></a>
 				<ul class="level2">
-					
-					
 					<li><a href="javascript:check5();">增加用户</a></li>
 					<li><a href="javascript:check6();">修改信息</a></li>
 					<li><a href="javascript:check7();;">删除用户</a></li>

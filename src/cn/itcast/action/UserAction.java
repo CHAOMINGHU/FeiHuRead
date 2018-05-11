@@ -1,5 +1,6 @@
 package cn.itcast.action;
 
+import cn.itcast.domain.Message;
 import cn.itcast.domain.User;
 import cn.itcast.service.UserService;
 
@@ -18,6 +19,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 
 	private User user=new User();
 	private User user2=new User();
+	private Message msg=new Message();
 	public User getModel() {
 		// TODO Auto-generated method stub
 		return this.user;
@@ -32,22 +34,27 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		return "add";
 		
 	}
+	
+	@SuppressWarnings("unused")
 	public String login() {
 		User existUser=userService.login(user);
+		Message exitMsg=userService.findUserByIdm(existUser.getId());
 		if(existUser==null) {
-			//µÇÂ½Ê§°Ü
-			this.addActionError("µÇÂ½Ê§°Ü£¬ÓÃ»§ÃûÃÜÂë´íÎó!");
+			//ï¿½ï¿½Â½Ê§ï¿½ï¿½
+			this.addActionError("ï¿½ï¿½Â½Ê§ï¿½Ü£ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!");
 			return ERROR;
 		} else {
-			//µÇÂ½³É¹¦
-            //½«ÓÃ»§µÄÐÅÏ¢´æÈësessionÖÐ
+			//ï¿½ï¿½Â½ï¿½É¹ï¿½
+            //ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½sessionï¿½ï¿½
 			ServletActionContext.getRequest().getSession().setAttribute("existUser0", existUser.getId());
             ServletActionContext.getRequest().getSession().setAttribute("existUser1", existUser.getUsername());
             ServletActionContext.getRequest().getSession().setAttribute("existUser2", existUser.getAge());
             ServletActionContext.getRequest().getSession().setAttribute("existUser3", existUser.getSex());
             ServletActionContext.getRequest().getSession().setAttribute("existUser4", existUser.getQ());
             ServletActionContext.getRequest().getSession().setAttribute("existUser5", existUser.getMoney());
-            //Ò³ÃæÌø×ª
+            ServletActionContext.getRequest().getSession().setAttribute("liuyan", exitMsg.getLiuYan());
+            ServletActionContext.getRequest().getSession().setAttribute("allTower", exitMsg.getId());
+            //Ò³ï¿½ï¿½ï¿½ï¿½×ª
             return "login";
 		}
 		
@@ -73,7 +80,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		
 	}
 	public String zhuanzhang() {
-		//ÎÒµÄÕËºÅ
+		//ï¿½Òµï¿½ï¿½Ëºï¿½
 		
 		System.out.println(user.getMoney());
 		System.out.print(ServletActionContext.getRequest().getSession().getAttribute("existUser0"));
@@ -89,7 +96,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		
 		this.userService.updateUser(user);	
 		
-		//×ªÕËÕËºÅ
+		//×ªï¿½ï¿½ï¿½Ëºï¿½
 		System.out.println(user.getMoney());
 		user.setId(user.getIdz());
 		user.setAge(userService.findUserById(user.getId()).getAge());
@@ -160,5 +167,15 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	}
 	public String msgpane() {
 		return "msgpane";
+	}
+	public String liuyan() {
+		msg.setId(2);
+		msg.setUserName("ç‹‚æµªä¸‰åˆ€");
+		msg.setLiuYan(msg.getLiuYan());
+		msg.setDataTime("1994-9-4");
+		msg.setCurrentTower(18);
+		msg.setAllTower(90);
+		this.userService.saveUser(msg);
+		return "liuyan";
 	}
 }

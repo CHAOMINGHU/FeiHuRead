@@ -6,28 +6,36 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <title>账户</title>
 </head>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <body>
  
-<h1 style="text-align: center;">我的信息</h1>
-<center>
-<table width="30%" height="100" border="1" cellspacing="0" cellpadding="0">
-<tr>
-<th>卡号</th>
-<th>用户名</th>
-<th>年龄</th>
-<th>性别</th>
-<th>余额</th>
+<h1 style="text-align: center;" class="text-info">我的信息</h1>
+
+<table  class="table">
+ <thead>
+<tr class="table-warning"> 
+<th style="text-align: center;">卡号</th>
+<th style="text-align: center;">用户名</th>
+<th style="text-align: center;">年龄</th>
+<th style="text-align: center;">性别</th>
+<th style="text-align: center;">余额</th>
 </tr>
-<tr>
+</thead>
+ <tbody>
+<tr class="table-primary">
 <td style="text-align: center;"><%=session.getAttribute("existUser0")%></td>
 <td style="text-align: center;"><%=session.getAttribute("existUser1")%></td>
 <td style="text-align: center;"><%=session.getAttribute("existUser2")%></td>
 <td style="text-align: center;"><%=session.getAttribute("existUser3")%></td>
 <td style="text-align: center;"><%=session.getAttribute("existUser5")%></td>
 </tr>
+</tbody>
 </table>
 
-</center>
+
+
 </body>
 
 </html>

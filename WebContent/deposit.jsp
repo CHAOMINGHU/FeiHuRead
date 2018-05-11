@@ -6,23 +6,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <title>存款</title>
 </head>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <body>
 <form action="${pageContext.request.contextPath }/userAction_deposit" method="post">
-<table border="1" width="60%" height="100px" align="center" cellspacing="0" cellpadding="0">
-<caption>安全存款，便捷生活</caption>
+<table class="table table-hover">
+<tr class="text-info">
+<h1 class="text-info">安全存款，便捷生活</h1>
+</tr>
 
 <tr>
-<th>请输入存款账号和金额</th>
+<th class="text-info">请输入存款账号和金额</th>
 
 </tr>
 <tr>
 
-<td><input type="number" id="id" name="id" placeholder="请输入账号" style="width:99.5%;height:100%;font-size:70%;text-align: center; " ></td>
+<td><input type="number" id="id" name="id" placeholder="请输入账号"  class="form-control"  ></td>
 
 </tr>
 <tr>
 
-<td><input type="number" id="money" name="money" placeholder="请输入金额" style="width:99.5%;height:100%;font-size:70%;text-align: center; " ></td>
+<td><input type="number" id="money" name="money" placeholder="请输入金额"  class="form-control" ></td>
 
 </tr>
 
@@ -32,8 +37,8 @@
 </table>
 <center>
 
-<input type="submit"  value="确认存款" style="width:100px;height:50px;font-size:70%;text-align: center; " >
-
+<!-- <input type="submit"  value="确认存款" style="width:100px;height:50px;font-size:70%;text-align: center; " > -->
+ <button type="submit" class="btn btn-primary btn-lg btn-block">确认存款</button>
 </center>
 </form>
 </body>

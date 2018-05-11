@@ -7,31 +7,32 @@ body{
 	padding-right: 10px;
 }
 form{
-	width: 360px;
-	height: 380px;
-	
-margin-left:900px;
-	
+	width:400px;
+	height:300px;
+    top:23%;
+    left: 60%;
+    position: absolute;
 	padding: 30px;
 	border: 1px splid rgba(0,0,0,0.2);
 	border-radius:8px;
 	background: rgba(0,0,0,0.5);
 	box-shadow:  0 0 13px 3px rgba(0,0,0,0.5);
-	overflow: hidden;
+	overflow: hidden; 
 }
+.iw{
+	width: 300px;
+	height: 60px;
+	
+  
+}
+.iw1{
+	width:150px;
+	float:left ;
+	padding-top: 20px;
+	}
 input{
-	width: 235px;
-    height: 30px;
-    border:1px solid rgba(255,255,255,0.4);
-    border-radius:6px;
-    display: block;
-    font-family: 'Source Sans Pro',sans-serif;
-    font-size: 18px;
-    color:#fff;
-    padding-left:45px;
-    padding-right: 20px;
-    margin-bottom: 10px;
-    background: rgba(255,255,255,0.8) no-repeat 16px 16px;  
+
+   
   
 }
 input[type=submit]{
